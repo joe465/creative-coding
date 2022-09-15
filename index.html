@@ -1,0 +1,46 @@
+<html>
+    <body>
+        <canvas height = "600" width = "600"></canvas>
+        <script>
+         
+          let canvas = document.querySelector('canvas');
+          let context = canvas.getContext('2d');
+
+          let arrayCount = 5;      
+
+          for(let i = 0; i < arrayCount; i++){
+            for(let j = 0; j < arrayCount; j++){
+              let xPos = 100;
+              let yPos = 100;
+              let width = 70;
+              let height = 70;
+              let xGap = xPos + (width * i) * 1.2;
+              let yGap = yPos + (height * j) * 1.2;
+
+              context.beginPath();
+              context.rect(xGap, yGap, width, height);
+              context.lineWidth = 1;
+              context.strokeStyle = 'black';
+              context.stroke();
+
+              let xPos2 = 110;
+              let yPos2 = 110;
+              let width2 = 50;
+              let height2 = 50;
+              let xGap2 = xPos2 + (width2 *i) * 1.68;
+              let yGap2 = yPos2 + (height2 * j) * 1.68;
+
+              if(Math.random() < 0.5){
+                context.beginPath();
+                context.rect(xGap2, yGap2, width2, height2);
+                context.lineWidth = 4;
+                context.strokeStyle = 'black';
+                context.stroke();
+              }
+             
+            }
+          }
+        
+        </script>
+    </body>
+</html>
